@@ -1,12 +1,14 @@
 <a href="https://thepreservedbible.com/" title="Why the King James Bible?"><img src="https://i.ibb.co/svCrDys/The-Preserved-Bible-Small.jpg" width="300" align="right"></a>
 
-# kjv
+# grb
 
 Read the Word of God from your terminal
 
+Forked from [layeh/kjv](https://github.com/layeh/kjv) using Greek text sourced from [lukesmithxyz/grb](https://github.com/lukesmithxyz/grb).
+
 ## Usage
 
-    usage: kjv [flags] [reference...]
+    usage: grb [flags] [reference...]
 
     Flags:
       -A num  show num verses of context after matching verses
@@ -43,12 +45,12 @@ Read the Word of God from your terminal
 
 ## Build
 
-kjv can be built by cloning the repository and then running make:
+grb can be built by cloning the repository and then running gmake:
 
-    git clone https://github.com/layeh/kjv.git
-    cd kjv
-    make
-    sudo make install
+    git clone https://github.com/calebstein1/grb.git
+    cd grb
+    gmake
+    doas make install
 
 ## License
 
