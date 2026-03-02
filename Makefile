@@ -12,7 +12,7 @@ prefix = /usr/local
 exec_prefix = $(prefix)
 bindir = $(exec_prefix)/bin
 
-kjv: $(OBJS)
+grb: $(OBJS)
 	$(CC) -o $@ $(LDFLAGS) $(OBJS) $(LDLIBS)
 
 src/kjv_main.o: src/kjv_main.c src/kjv_config.h src/kjv_data.h src/kjv_match.h src/kjv_ref.h src/kjv_render.h src/strutil.h
@@ -29,15 +29,15 @@ src/strutil.o: src/strutil.h src/strutil.c
 
 data/kjv_data.o: src/kjv_data.h data/kjv_data.c
 
-data/kjv_data.c: data/kjv.tsv data/generate.awk src/kjv_data.h
+data/kjv_data.c: data/grb.tsv data/generate.awk src/kjv_data.h
 	awk -f data/generate.awk $< > $@
 
 .PHONY: clean install uninstall
 clean:
-	rm -rf $(OBJS) kjv
+	rm -rf $(OBJS) grb
 
 install:
-	install kjv $(bindir)/kjv
+	install grb $(bindir)/grb
 
 uninstall:
-	rm -rf $(bindir)/kjv
+	rm -rf $(bindir)/grb
